@@ -21,3 +21,4 @@ ship = Picture(screen,"ship.bmp")
 
 ship.draw()
 pygame.display.flip()
+time.sleep(8)
