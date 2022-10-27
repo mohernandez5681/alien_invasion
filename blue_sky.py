@@ -1,7 +1,5 @@
 import pygame
-import sys
 import time
-
 class Picture():
     def __init__(self,screen, image_address):
         self.screen = screen
@@ -17,8 +15,7 @@ pygame.init()
 screen = pygame.display.set_mode((600, 400))
 screen.fill((0, 0, 255))
 
-ship = Picture(screen,"ship.bmp")
-
+ship = Picture(screen,"image/ship.bmp")
 ship.draw()
 pygame.display.flip()
 time.sleep(8)
