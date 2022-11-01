@@ -1,5 +1,6 @@
 import pygame
 import time
+
 class Picture():
     def __init__(self,screen, image_address):
         self.screen = screen
@@ -10,6 +11,7 @@ class Picture():
     def draw(self):
         self.rect.center = self.screen_rect.center
         self.screen.blit(self.image, self.rect)
+
 
 pygame.init()
 screen = pygame.display.set_mode((600, 400))
