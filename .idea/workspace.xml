@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b9c1132-fefd-465d-97f4-e62a9d297d09" name="Changes" comment="" />
+    <list default="true" id="0b9c1132-fefd-465d-97f4-e62a9d297d09" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/rocket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rocket_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_sky_game.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings2.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings2.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,5 +83,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/settings2.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
