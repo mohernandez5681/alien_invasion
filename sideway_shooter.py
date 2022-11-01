@@ -6,7 +6,6 @@ from bullet2 import Bullet
 
 class SidewaysShooter:
     """Overall class to manage game assets and behavior."""
-
     def __init__(self):
         """Initialize the game, and create game resources."""
         pygame.init()
@@ -63,10 +62,8 @@ class SidewaysShooter:
 
     def _update_bullets(self):
         """Update position of bullets and get rid of old bullets."""
-        # Update bullet positions.
         self.bullets.update()
 
-        # Get rid of bullets that have disappeared.
         for bullet in self.bullets.copy():
             if bullet.rect.left >= self.screen.get_rect().right:
                  self.bullets.remove(bullet)
@@ -82,6 +79,5 @@ class SidewaysShooter:
 
 
 if __name__ == '__main__':
-    # Make a game instance, and run the game.
     ss_game = SidewaysShooter()
     ss_game.run_game()
