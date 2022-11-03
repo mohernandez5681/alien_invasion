@@ -1,14 +1,13 @@
 
 class Settings:
-    """A class to store all settings for Sideways Shooter."""
+    """A class to store all settings for the game."""
 
     def __init__(self):
         """Initialize the game's settings."""
         # Screen settings
-        self.screen_width = 600
-        self.screen_height = 400
-        self.bg_color = (0, 0, 230)
-
+        self.screen_width = 1000
+        self.screen_height = 600
+        self.bg_color = (250,250 ,250 )
         # Ship settings
         self.ship_speed = 1.5
 
