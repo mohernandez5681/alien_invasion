@@ -1,7 +1,6 @@
 import pygame
 from pygame.sprite import Sprite
 
-
 class Raindrop(Sprite):
     """A class to represent a single raindrop."""
 
@@ -18,6 +17,13 @@ class Raindrop(Sprite):
         self.rect.y = self.rect.height
 
         self.y = float(self.rect.y)
+
+    def check_disappeared(self):
+        """Check if drop has disappeared off bottom of screen."""
+        if self.rect.top > self.screen.get_rect().bottom:
+            return True
+        else:
+            return False
 
     def update(self):
         """Move the raindrop down the screen."""
