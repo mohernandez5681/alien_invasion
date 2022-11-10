@@ -1,10 +1,8 @@
 import sys
-
+from random import randint
 import pygame
-
 from settings import Settings
 from star import Star
-
 
 class StarsGame:
     """Overall class to manage game assets and behavior."""
@@ -42,7 +40,6 @@ class StarsGame:
 
     def _create_stars(self):
         """Create a sky full of stars."""
-
         star = Star(self)
         star_width, star_height = star.rect.size
         available_space_x = self.settings.screen_width - (star_width)
@@ -60,16 +57,19 @@ class StarsGame:
         """Create an star and place it in the row."""
         star = Star(self)
         star_width, star_height = star.rect.size
-        star.x = star_width + 2 * star_width * star_number
-        star.rect.x = star.x
+        star.rect.x = star_width + 2 * star_width * star_number
         star.rect.y = star.rect.height + 2 * star.rect.height * row_number
+
+
+        star.rect.x += randint(-10, 10)
+        star.rect.y += randint(-10, 10)
+
         self.stars.add(star)
 
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
         self.screen.fill(self.settings.bg_color)
         self.stars.draw(self.screen)
-
         pygame.display.flip()
 
 
