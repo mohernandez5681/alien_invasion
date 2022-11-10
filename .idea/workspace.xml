@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b9c1132-fefd-465d-97f4-e62a9d297d09" name="Changes" comment="" />
+    <list default="true" id="0b9c1132-fefd-465d-97f4-e62a9d297d09" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/chapter 13/raindrop.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter 13/raindrop_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter 13/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/chapter 13/settings.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
