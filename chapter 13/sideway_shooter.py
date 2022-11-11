@@ -1,10 +1,14 @@
 import sys
 from random import random
+
 import pygame
+
 from settings import Settings
+from game_stats import GameStats
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
+
 
 class SidewaysShooter:
     """Overall class to manage game assets and behavior."""
@@ -15,8 +19,11 @@ class SidewaysShooter:
         self.settings = Settings()
 
         self.screen = pygame.display.set_mode(
-                (self.settings.screen_width, self.settings.screen_height))
+            (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Sideways Shooter")
+
+        # Create an instance to store game statistics.
+        self.stats = GameStats(self)
 
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
@@ -27,13 +34,14 @@ class SidewaysShooter:
         while True:
             self._check_events()
 
-            # Consider creating a new alien.
-            self._create_alien()
+            if self.stats.game_active:
+                # Consider creating a new alien.
+                self._create_alien()
 
+                self.ship.update()
+                self._update_bullets()
+                self._update_aliens()
 
-            self.ship.update()
-            self._update_bullets()
-            self.aliens.update()
             self._update_screen()
 
     def _check_events(self):
@@ -76,21 +84,53 @@ class SidewaysShooter:
 
         for bullet in self.bullets.copy():
             if bullet.rect.left >= self.screen.get_rect().right:
-                 self.bullets.remove(bullet)
+                self.bullets.remove(bullet)
 
         self._check_bullet_alien_collisions()
 
     def _check_bullet_alien_collisions(self):
         """Check whether any bullets have hit an alien."""
         collisions = pygame.sprite.groupcollide(
-                self.bullets, self.aliens, True, True)
+            self.bullets, self.aliens, True, True)
 
     def _create_alien(self):
         """Create an alien, if conditions are right."""
         if random() < self.settings.alien_frequency:
             alien = Alien(self)
             self.aliens.add(alien)
-            print(len(self.aliens))
+
+    def _update_aliens(self):
+        """Update alien positions, and look for collisions with ship."""
+        self.aliens.update()
+
+        if pygame.sprite.spritecollideany(self.ship, self.aliens):
+            self._ship_hit()
+
+        # Look for aliens that have hit the left edge of the screen.
+        self._check_aliens_left_edge()
+
+    def _check_aliens_left_edge(self):
+        """Respond to aliens that have hit left edge of the screen. Treat this the same as the ship getting hit."""
+
+        for alien in self.aliens.sprites():
+            if alien.rect.left < 0:
+                self._ship_hit()
+                break
+
+    def _ship_hit(self):
+        """Respond to an alien hitting the ship."""
+        if self.stats.ships_left > 0:
+            # Decrement ships left.
+            self.stats.ships_left -= 1
+
+            # Get rid of any remaining aliens and bullets.
+            self.aliens.empty()
+            self.bullets.empty()
+
+            # Center the ship.
+            self.ship.center_ship()
+        else:
+            self.stats.game_active = False
 
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""

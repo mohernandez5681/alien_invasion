@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b9c1132-fefd-465d-97f4-e62a9d297d09" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/chapter 13/alien.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter 13/bullet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter 13/ship.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter 13/sideway_shooter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter 13/game_stats.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter 13/alien.py" beforeDir="false" afterPath="$PROJECT_DIR$/chapter 13/alien.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter 13/bullet.py" beforeDir="false" afterPath="$PROJECT_DIR$/chapter 13/bullet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter 13/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/chapter 13/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter 13/ship.py" beforeDir="false" afterPath="$PROJECT_DIR$/chapter 13/ship.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter 13/sideway_shooter.py" beforeDir="false" afterPath="$PROJECT_DIR$/chapter 13/sideway_shooter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
